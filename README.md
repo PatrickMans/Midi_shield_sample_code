@@ -1,3 +1,3 @@
 Midi Shield Sample Code
 
-![The Schematics...]("midi shield.png"?raw=true "Midi Shield Schematic")
+![The Schematics...]("midishield.gif"?raw=true "Midi Shield Schematic")
