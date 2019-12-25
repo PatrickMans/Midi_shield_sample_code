@@ -39,6 +39,13 @@ const int rs = 12, en = 11, d4 = 10, d5 = 9, d6 = 8, d7 = 7;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 MIDI_CREATE_DEFAULT_INSTANCE();
 
+//     Var declarations 
+//#######################################################
+const int buttonPin1 = 3;     // the number of the pushbutton pin
+const int buttonPin2 = 4;
+const int buttonPin3 = 5;
+const int buttonPin4 = 6;
+
 //     Midi callback routines 
 //#######################################################
 // Change the routines to the desired action.. 
@@ -87,12 +94,18 @@ void setup() {
     digitalWrite(13,LOW);
     lcd.begin(16, 1); 
     lcd.print("Midi Sample Code");
+    pinMode(buttonPin1, INPUT);
+    pinMode(buttonPin2, INPUT);
+    pinMode(buttonPin3, INPUT);
+    pinMode(buttonPin4, INPUT);
+    
     MIDI.setHandleControlChange(SendCC);
     MIDI.setHandleProgramChange(SendPP);
     MIDI.setHandleNoteOn(SendNoteOn);
     MIDI.setHandleNoteOff(SendNoteOff);
     MIDI.setHandleSystemExclusive(SendSysEx);
     MIDI.begin(MIDI_CHANNEL_OMNI);
+    
     }
 
 void loop() {
